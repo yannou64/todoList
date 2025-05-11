@@ -57,6 +57,11 @@ body {
   height: 30px;
   align-items: center;
 }
+#container #liste li:focus {
+  color: gray;
+  border: none;
+  outline: none;
+}
 #container #liste li p {
   font-size: 0.8rem;
 }

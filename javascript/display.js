@@ -109,6 +109,7 @@ function create_li(todo, index, array, action) {
   });
   li.appendChild(p);
   li.appendChild(checkbox);
+  li.setAttribute("tabindex", "-1")
   // Je marque le p du dernier li pour faire une animamation dessus si c'est une action add
   if (index == array.length - 1 && action === "add")
     li.querySelector("p").classList.add("last_one");

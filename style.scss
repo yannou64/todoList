@@ -49,6 +49,12 @@ body {
       justify-content: space-between;
       height: 30px;
       align-items: center;
+      &:focus {
+        color: gray;
+        border: none;
+        outline: none;
+      }
+
       p {
         font-size: 0.8rem;
       }

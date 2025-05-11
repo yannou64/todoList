@@ -1,5 +1,6 @@
 import { start, updateLocalStorage } from "./javascript/storage.js";
-import {
+import { nav_up, nav_down } from "./javascript/ui.js";
+import { 
   isPanelValidationMode,
   displayList,
   initListe,
@@ -47,10 +48,6 @@ document.getElementById("supp").addEventListener("click", () => {
   displayList(todos, "supp");
 });
 
-document.body.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") erase_last_one(todos);
-});
-
 // Annuler
 document.getElementById("cancel").addEventListener("click", () => {
   returnToPanelValidation();
@@ -89,3 +86,11 @@ document.getElementById("sort").addEventListener("click", () => {
   initListe();
   displayList(todos);
 });
+
+// navigation avec le pavé numérique
+
+document.body.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") erase_last_one(todos);
+    if (e.key === "ArrowUp") nav_up()
+    if (e.key === "ArrowDown") nav_down()
+  });
