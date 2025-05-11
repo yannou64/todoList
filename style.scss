@@ -1,0 +1,151 @@
+@import "./css/settings";
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  background-color: $myWhite;
+}
+
+#container {
+  font-family: "Underdog";
+  width: clamp(300px, 50vw, 500px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(
+      rgba(249, 237, 218, 0.4),
+      rgba(249, 237, 218, 0.5)
+    ),
+    url(./img/parchemin.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding-top: 75px;
+
+  #liste {
+    width: 50%;
+    padding: 0;
+
+    .modif_up {
+      color: $myblue;
+      font-weight: bolder;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      align-items: center;
+      p {
+        font-size: 0.8rem;
+      }
+      p.last_one {
+        display: inline-block;
+        animation: colorChange 0.4s ease-in-out forwards;
+      }
+      @keyframes colorChange {
+        from {
+          color: $myWhite;
+        }
+        to {
+          color: black;
+        }
+      }
+    }
+  }
+
+  #endPage {
+    height: 32px;
+    background: linear-gradient(
+      to bottom,
+      rgba(249, 237, 218, 0),
+      rgba(249, 237, 218, 1)
+    );
+    width: 100%;
+    padding-top: 50px;
+  }
+}
+
+#panel {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  border-radius: 16px;
+  background-color: $panel;
+  box-shadow: 4px 4px 8px gray;
+
+  label.hiddened {
+    display: none;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    input {
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+      background-color: $myWhite;
+
+      &.modifMod:focus {
+        outline: solid 5px $myblue;
+      }
+      &:focus {
+        outline: solid 5px $myGreen;
+      }
+    }
+
+    .btn_round {
+      height: 36px;
+      width: 36px;
+      border-radius: 18px;
+      border: solid 4px $myWhite;
+
+      &-hiddened {
+        display: none;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .btn {
+    padding: 8px;
+    border: none;
+    border-radius: 16px;
+    font-weight: bolder;
+
+    &-hiddened {
+      display: none;
+    }
+  }
+
+  #supp {
+    background-color: $myRed;
+    color: $myWhite;
+  }
+
+  #cancel {
+    background-color: $myWhite;
+    color: $myblue;
+  }
+}
+
+.to_supp {
+  opacity: 0.3;
+
+  p {
+    text-decoration: line-through;
+  }
+}

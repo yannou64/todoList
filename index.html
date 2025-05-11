@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr"> <!-- Langue changée en "fr" si ton appli est en français -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Script principal en module, chargé en différé -->
+    <script type="module" src="./main.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Section principale contenant la liste des tâches -->
+    <section id="container">
+      <h1>Todo List</h1>
+      <ul id="liste"></ul> <!-- Liste des tâches -->
+      <div id="endPage"></div> <!-- Ancre ou effet visuel de fin -->
+    </section>
+
+    <!-- Panneau de contrôle : ajout, modification, suppression -->
+    <section id="panel">
+      <div>
+        <!-- Champ de saisie avec label pour l’accessibilité (caché visuellement) -->
+        <label for="input" class="hiddened">Entrez une tâche à effectuer</label>
+        <input type="text" id="input" placeholder="Nouvelle ToDo" required />
+
+        <!-- Bouton d’ajout de tâche -->
+        <button id="add" class="btn_round" aria-label="Ajouter une tâche">
+          <img src="./img/valider.png" alt="Icône de validation" />
+        </button>
+
+        <!-- Bouton de mise à jour d’une tâche (initialement caché) -->
+        <button id="update" class="btn_round btn_round-hiddened" aria-label="Mettre à jour la tâche">
+          <img src="./img/modifier.png" alt="Icône de mise à jour" />
+        </button>
+      </div>
+
+      <!-- Boutons supplémentaires -->
+      <button id="supp" class="btn">Refresh</button>
+      <button id="cancel" class="btn btn-hiddened">Annuler</button>
+    </section>
+  </body>
+</html>

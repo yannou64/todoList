@@ -1,0 +1,21 @@
+$myWhite: rgb(249, 237, 218);
+$myGreen: #93C47D;
+$myRed: rgb(235, 83, 49);
+$myblue: rgb(1, 148, 185);
+$panel: #dba56d;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-bottom: 32px;
+}
+
+@font-face {
+  font-family: "Underdog";
+  src: url("../font/Underdog-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}/*# sourceMappingURL=font.css.map */

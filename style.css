@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-bottom: 32px;
+}
+
+@font-face {
+  font-family: "Underdog";
+  src: url("../font/Underdog-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+} 
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  background-color: rgb(249, 237, 218);
+}
+
+#container {
+  font-family: "Underdog";
+  width: clamp(300px, 50vw, 500px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(rgba(249, 237, 218, 0.4), rgba(249, 237, 218, 0.5)), url(./img/parchemin.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding-top: 75px;
+}
+#container #liste {
+  width: 50%;
+  padding: 0;
+}
+#container #liste .modif_up {
+  color: rgb(1, 148, 185);
+  font-weight: bolder;
+}
+#container #liste li {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  align-items: center;
+}
+#container #liste li p {
+  font-size: 0.8rem;
+}
+#container #liste li p.last_one {
+  display: inline-block;
+  animation: colorChange 0.4s ease-in-out forwards;
+}
+@keyframes colorChange {
+  from {
+    color: rgb(249, 237, 218);
+  }
+  to {
+    color: black;
+  }
+}
+#container #endPage {
+  height: 32px;
+  background: linear-gradient(to bottom, rgba(249, 237, 218, 0), rgb(249, 237, 218));
+  width: 100%;
+  padding-top: 50px;
+}
+
+#panel {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  border-radius: 16px;
+  background-color: #dba56d;
+  box-shadow: 4px 4px 8px gray;
+}
+#panel label.hiddened {
+  display: none;
+}
+#panel div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+#panel div input {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(249, 237, 218);
+}
+#panel div input.modifMod:focus {
+  outline: solid 5px rgb(1, 148, 185);
+}
+#panel div input:focus {
+  outline: solid 5px #93C47D;
+}
+#panel div .btn_round {
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  border: solid 4px rgb(249, 237, 218);
+}
+#panel div .btn_round-hiddened {
+  display: none;
+}
+#panel div .btn_round img {
+  width: 100%;
+}
+#panel .btn {
+  padding: 8px;
+  border: none;
+  border-radius: 16px;
+  font-weight: bolder;
+}
+#panel .btn-hiddened {
+  display: none;
+}
+#panel #supp {
+  background-color: rgb(235, 83, 49);
+  color: rgb(249, 237, 218);
+}
+#panel #cancel {
+  background-color: rgb(249, 237, 218);
+  color: rgb(1, 148, 185);
+}
+
+.to_supp {
+  opacity: 0.3;
+}
+.to_supp p {
+  text-decoration: line-through;
+}/*# sourceMappingURL=style.css.map */
