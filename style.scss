@@ -27,6 +27,14 @@ body {
   background-position: top center;
   padding-top: 75px;
 
+  #sort{
+    width: 25px;
+    margin-bottom: 16px;
+    img {
+      width: 100%;
+    }
+  }
+
   #liste {
     width: 50%;
     padding: 0;

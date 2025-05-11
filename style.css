@@ -4,7 +4,7 @@
 }
 
 h1 {
-  margin-bottom: 32px;
+  margin-bottom: 8px;
 }
 
 @font-face {
@@ -35,6 +35,13 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   padding-top: 75px;
+}
+#container #sort {
+  width: 25px;
+  margin-bottom: 16px;
+}
+#container #sort img {
+  width: 100%;
 }
 #container #liste {
   width: 50%;

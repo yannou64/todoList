@@ -1,10 +1,6 @@
 import { updateLocalStorage } from "./storage.js";
+import { erase_sound, add_sound } from "./sounds.js"
 
-// Initialise des sons pour qu'il ne soit chargé qu'une fois
-const erase_sound = new Audio("./sound/erase.wav");
-erase_sound.volume = 0.4;
-const add_sound = new Audio("./sound/pen.wav");
-add_sound.volume = 0.05;
 
 // Variable pour savoir si le panet est en mode validation afin de configurer
 // l'action de Enter dans l'input
@@ -15,7 +11,6 @@ export let isPanelValidationMode = true;
 // action: permet de personnaliser un peu la fonction par rapport au contexte
 export function displayList(array, action) {
   // formattage de array pour que les actions checkées soient en dernière position
-  array = formattage(array);
   const ul = document.getElementById("liste");
   array.forEach((todo, index, array) => {
     // Creation des li
@@ -59,6 +54,11 @@ export function erase_last_one(array) {
   displayList(array, "supp");
 }
 
+export function formattage(array) {
+    const array_unchecked = array.filter((element) => !element.isChecked);
+    const array_checked = array.filter((element) => element.isChecked);
+    return array_unchecked.concat(array_checked);
+  }
 //
 // Fonctions private
 //
@@ -123,8 +123,4 @@ function init_modif_value() {
   });
 }
 
-function formattage(array) {
-  const array_unchecked = array.filter((element) => !element.isChecked);
-  const array_checked = array.filter((element) => element.isChecked);
-  return array_unchecked.concat(array_checked);
-}
+

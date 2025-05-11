@@ -1,5 +1,12 @@
 import { start, updateLocalStorage } from "./javascript/storage.js";
-import { isPanelValidationMode, displayList, initListe,returnToPanelValidation, erase_last_one } from "./javascript/display.js";
+import {
+  isPanelValidationMode,
+  displayList,
+  initListe,
+  returnToPanelValidation,
+  erase_last_one,
+  formattage,
+} from "./javascript/display.js";
 
 /////
 // main program
@@ -41,32 +48,44 @@ document.getElementById("supp").addEventListener("click", () => {
 });
 
 document.body.addEventListener("keydown", (e) => {
-    if(e.key === "Escape") erase_last_one(todos)
-})
+  if (e.key === "Escape") erase_last_one(todos);
+});
 
 // Annuler
 document.getElementById("cancel").addEventListener("click", () => {
-    returnToPanelValidation() 
-})
+  returnToPanelValidation();
+});
 
 // Modifer
 document.getElementById("update").addEventListener("click", () => {
-    const newValue = document.getElementById("input").value
-    if(newValue.trim()){
-        // je récupère l'index de la valeur à modifier grâce au marquer modif_up sur le li
-        const index = document.querySelector(".modif_up input").getAttribute("data-index")
-        // je met à jours le tableau todos à l'index récupéré
-        todos[index].todo = newValue
-        updateLocalStorage(todos)
-        initListe()
-        displayList(todos)
-        returnToPanelValidation()
-    }
-})
+  const newValue = document.getElementById("input").value;
+  if (newValue.trim()) {
+    // je récupère l'index de la valeur à modifier grâce au marquer modif_up sur le li
+    const index = document
+      .querySelector(".modif_up input")
+      .getAttribute("data-index");
+    // je met à jours le tableau todos à l'index récupéré
+    todos[index].todo = newValue;
+    updateLocalStorage(todos);
+    initListe();
+    displayList(todos);
+    returnToPanelValidation();
+  }
+});
 
 // Ajouter / modifier avec la touche Enter
 document.getElementById("input").addEventListener("keydown", (e) => {
-    if(e.key === "Enter"){
-        isPanelValidationMode ? document.getElementById("add").click() : document.getElementById("update").click()
-    }
-})
+  if (e.key === "Enter") {
+    isPanelValidationMode
+      ? document.getElementById("add").click()
+      : document.getElementById("update").click();
+  }
+});
+
+// Sort
+document.getElementById("sort").addEventListener("click", () => {
+  todos = formattage(todos);
+  updateLocalStorage(todos);
+  initListe();
+  displayList(todos);
+});
