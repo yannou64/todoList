@@ -1,5 +1,5 @@
 import { start, updateLocalStorage } from "./javascript/storage.js";
-import { nav_up, nav_down } from "./javascript/ui.js";
+import { nav_up, nav_down, nav_rigth, nav_Enter } from "./javascript/ui.js";
 import { 
   isPanelValidationMode,
   displayList,
@@ -90,7 +90,9 @@ document.getElementById("sort").addEventListener("click", () => {
 // navigation avec le pavé numérique
 
 document.body.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") erase_last_one(todos);
+    if (e.key === "Escape") document.getElementById("supp").click();
     if (e.key === "ArrowUp") nav_up()
     if (e.key === "ArrowDown") nav_down()
+    if (e.key === "ArrowRight") nav_rigth()
+    if (e.key === "Enter") nav_Enter()
   });
